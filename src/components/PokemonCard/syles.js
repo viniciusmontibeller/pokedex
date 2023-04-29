@@ -6,6 +6,7 @@ const Card = styled.li`
     width: 300px;
     text-align: center;
     padding: 10px;
+    border-radius: 10px;
 
     span{
         padding: 5px 10px;

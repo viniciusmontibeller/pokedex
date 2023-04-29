@@ -8,11 +8,11 @@ import { PokemonCard } from "../components/PokemonCard";
 const Home = () => {
 
     const [pokemons, setPokemons] = useState([])
-    // const [listQuantity, setListQuantity] = useState(10)
+    const [listQuantity, setListQuantity] = useState(10)
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPokemonsList()
+            const data = await getPokemonsList(listQuantity)
             const pokemonDetails = await Promise.all(data.map(async (pokemon) => {
                 return await getPokemon(pokemon.name)
             }))
@@ -22,16 +22,12 @@ const Home = () => {
             )
         }
         fetchData()
-    }, [])
-
-    const handleClick = () => {
-        
-    }
+    }, [listQuantity])
 
     const pokemonFilter = (name) => {
         let filtetredPokemons = []
         if(name===""){
-            getPokemonsList()
+            
         }
         console.log(name)
         pokemons.map((pokemon => {
@@ -40,6 +36,10 @@ const Home = () => {
             }
         }))
         setPokemons(filtetredPokemons)
+    }
+
+    const handleClick = () => {
+        setListQuantity(listQuantity + 10)
     }
 
     return (
