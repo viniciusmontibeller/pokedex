@@ -20,10 +20,9 @@ const GlobalStyle = createGlobalStyle`
         background-size: cover;
         background-color: ${props => props.theme.theme.backgroundColor};
         font-family: ${props => props.theme.defaultValues.fontFamily};
-        height: 93vh;
 
         #root {
-            height: 100%;
+            height: auto;
         }
     }
 `

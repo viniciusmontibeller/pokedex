@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Loading = () => {
     return (
         <Load>
-            <img src={pokeball}/>
+            <img src={pokeball} alt='pokeball'/>
             <h2>Loading...</h2>
         </Load>
     )

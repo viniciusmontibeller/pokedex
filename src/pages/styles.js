@@ -5,7 +5,7 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100%;
+    min-height: 93vh;
     gap: 50px;
     padding: 50px 15px;
     ${props => props.details && css`
@@ -23,7 +23,7 @@ const Main = styled.main`
 const Filter = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
 
@@ -145,4 +145,4 @@ const NotFound = styled.h3`
     color: ${props => props.theme.theme.color};
 `
 
-export { List, Button, ListContainer, Main, Filter, NotFound, CustomSelect, SelectArrow,  Search, Select,}
+export { List, Button, ListContainer, Main, Filter, NotFound, CustomSelect, SelectArrow,  Search, Select}

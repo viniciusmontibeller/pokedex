@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import { BiSearch } from 'react-icons/bi'
 import { Loading } from "../components/Loading";
 
+const pokemonArray = ['fire', 'grass', 'electric', 'water', 'ground', 'rock', 'fairy', 'poison', 'bug', 'dragon', 'psychic', 'flying', 'fighting', 'normal', 'ice', 'ghost', 'dark', 'steel']
+
 const Home = () => {
 
     const [pokemons, setPokemons] = useState([])
@@ -25,49 +27,36 @@ const Home = () => {
         const pokemonDetails = await Promise.all(data.map(async (pokemon) => {
             return await getPokemon(pokemon.name)
         }))
-        setPokemons(
-            pokemonDetails
-        )
+        setPokemons(pokemonDetails)
         setLoading(false)
     }
+    console.log(pokemons)
 
-    // const pokemonFilter = (name) => {
-    //     let filtetredPokemons = []
-    //     if(name===""){
-    //         getPokemonsData()
-    //     }
-    //     pokemons.filter(pokemon => {
-    //         if(pokemon.name.includes(name.toLowerCase())){
-    //             filtetredPokemons = [...filtetredPokemons, pokemon]
-    //         }
-    //     })
-    //     setPokemons(filtetredPokemons)
-    // }
+    // useEffect(() => {
+    //     setPokemons(prev => pokemonFilter(prev))
+    // }, [query, queryType])
 
-    // const pokemonFilter = (query, type) => {
-    //     const filteredPokemons = pokemons.filter(pokemon => {
-    //         return pokemon.name.toLowerCase().includes(query?.toLowerCase())}).filter(pokemon => {
-    //         return pokemon.types[0].type.name.includes(type) || pokemon.types[1]?.type.name.includes(type)
-    //     })
-    //     return filteredPokemons
-    // }
-
-    // const newPokemons = pokemonFilter()
+    const pokemonFilter = (pokemons) => {
+        return pokemons.filter(pokemon => {
+            return pokemon.name.toLowerCase().includes(query.toLowerCase())
+            }).filter(pokemon => {
+            return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
+            })
+    }
     
-    const filteredPokemons = pokemons.filter(pokemon => {
-        return pokemon.name.toLowerCase().includes(query.toLowerCase())
-        }).filter(pokemon => {
-        return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
-        })
-
-    // const filteredPokemons2 = filteredPokemons.filter(pokemon => {
+    // const filteredPokemons = pokemons.filter(pokemon => {
+    //     return pokemon.name.toLowerCase().includes(query.toLowerCase())
+    //     }).filter(pokemon => {
     //     return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
     //     })
-
 
     const handleClick = () => {
         setListQuantity(listQuantity + 10)
     }
+
+    // const searchTypeFilter = type => (pokemons) => pokemons.filter(pokemon => pokemon.type === type)
+
+    // const searchFilter = 
 
     // const pokemonTypeFilter = (type) => {
     //     let filtetredPokemons = []
@@ -86,13 +75,18 @@ const Home = () => {
     //     }
     // }
 
+    const handleReset = () => {
+        setQuery('')
+        setQueryType('')
+    }
+
     return (
         <>
-            <Header />
+            <Header handleReset={handleReset}/>
             <Main>
             <Filter>
             <Search>
-            <input value={query} 
+            <input value={query}
                 onChange={(event) => setQuery(event.target.value)} 
                 type='search' 
                 placeholder="Search Pokemon"/>
@@ -101,7 +95,8 @@ const Home = () => {
             <CustomSelect>
             <Select value={queryType} onChange={(event) => setQueryType(event.target.value)} >
                 <option value=''>Type</option>
-                <option value="fire">fire</option>
+                {pokemonArray.map((type, index) => <option key={index} value={type}>{type}</option>)}
+                {/* <option value="fire">fire</option>
                 <option value="grass">grass</option>
                 <option value="electric">electric</option>
                 <option value="water">water</option>
@@ -118,7 +113,7 @@ const Home = () => {
                 <option value="ice">ice</option>
                 <option value="ghost">ghost</option>
                 <option value="dark">dark</option>
-                <option value="steel">steel</option>
+                <option value="steel">steel</option> */}
             </Select>
                 <SelectArrow />
             </CustomSelect>
@@ -127,8 +122,8 @@ const Home = () => {
                 {loading ? <Loading/> : 
                 <> 
                     <List>
-                    {filteredPokemons.length > 0 ?
-                    filteredPokemons.map((pokemon, index) => {
+                    {pokemonFilter(pokemons).length > 0 ?
+                    pokemonFilter(pokemons).map((pokemon, index) => {
                         return (
                             <Link key={index} to={`/details/${pokemon.name}`}>
                                 <PokemonCard

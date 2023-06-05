@@ -1,10 +1,9 @@
 import { themes } from '../../global/Theme'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import styled from 'styled-components'
 import { BsSun } from 'react-icons/bs'
 import { BsMoon } from 'react-icons/bs'
-
 
 const ThemeTogglerButton = () => {
 

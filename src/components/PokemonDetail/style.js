@@ -48,7 +48,6 @@ const Name = styled.div`
             font-size: 20px;
         }
     }
-
 `
 
 const Moves = styled.ul`
@@ -107,7 +106,6 @@ const Ability = styled.ul`
         border-top-right-radius: inherit;
         box-shadow: ${props => props.theme.defaultValues.shadow};
         }
-
     }
 `
 

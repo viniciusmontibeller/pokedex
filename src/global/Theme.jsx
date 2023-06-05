@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import LightBackground from '../assets/lightbg.jpg'
 import DarkBackground from '../assets/darkbg.jpg'
 
@@ -53,7 +53,7 @@ const pokemonTypeColor = {
 
 const localTheme = JSON.parse(localStorage.getItem('theme')) || themes.light
 
-const Theme = ({children}) => {
+const Theme = ({ children }) => {
         const [ theme, setTheme ] = useState(localTheme)
 
         useEffect(() => {
