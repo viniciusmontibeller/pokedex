@@ -19,22 +19,16 @@ const Home = () => {
     const [listQuantity, setListQuantity] = useState(10)
 
     useEffect(() => {
+        const getPokemonsData = async () => {
+            const data = await getPokemonsList(listQuantity)
+            const pokemonDetails = await Promise.all(data.map(async (pokemon) => {
+                return await getPokemon(pokemon.name)
+            }))
+            setPokemons(pokemonDetails)
+            setLoading(false)
+        }
         getPokemonsData()
     }, [listQuantity])
-
-    const getPokemonsData = async () => {
-        const data = await getPokemonsList(listQuantity)
-        const pokemonDetails = await Promise.all(data.map(async (pokemon) => {
-            return await getPokemon(pokemon.name)
-        }))
-        setPokemons(pokemonDetails)
-        setLoading(false)
-    }
-    console.log(pokemons)
-
-    // useEffect(() => {
-    //     setPokemons(prev => pokemonFilter(prev))
-    // }, [query, queryType])
 
     const pokemonFilter = (pokemons) => {
         return pokemons.filter(pokemon => {
@@ -43,37 +37,10 @@ const Home = () => {
             return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
             })
     }
-    
-    // const filteredPokemons = pokemons.filter(pokemon => {
-    //     return pokemon.name.toLowerCase().includes(query.toLowerCase())
-    //     }).filter(pokemon => {
-    //     return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
-    //     })
 
     const handleClick = () => {
-        setListQuantity(listQuantity + 10)
+        setListQuantity(prev => prev + 10)
     }
-
-    // const searchTypeFilter = type => (pokemons) => pokemons.filter(pokemon => pokemon.type === type)
-
-    // const searchFilter = 
-
-    // const pokemonTypeFilter = (type) => {
-    //     let filtetredPokemons = []
-    //     if(type === ""){
-    //         getPokemonsData()
-    //     }
-    //     {   
-    //         pokemons.filter((pokemon) => {
-    //             pokemon.types.map(item => {
-    //                 if(item.type.name === type){
-    //                     filtetredPokemons = [...filtetredPokemons, pokemon]
-    //                 }
-    //             })
-    //             setPokemons(filtetredPokemons)
-    //         })
-    //     }
-    // }
 
     const handleReset = () => {
         setQuery('')
@@ -96,24 +63,6 @@ const Home = () => {
             <Select value={queryType} onChange={(event) => setQueryType(event.target.value)} >
                 <option value=''>Type</option>
                 {pokemonArray.map((type, index) => <option key={index} value={type}>{type}</option>)}
-                {/* <option value="fire">fire</option>
-                <option value="grass">grass</option>
-                <option value="electric">electric</option>
-                <option value="water">water</option>
-                <option value="ground">ground</option>
-                <option value="rock">rock</option>
-                <option value="fairy">fairy</option>
-                <option value="poison">poison</option>
-                <option value="bug">bug</option>
-                <option value="dragon">dragon</option>
-                <option value="psychic">psychic</option>
-                <option value="flying">flying</option>
-                <option value="fighting">fighting</option>
-                <option value="normal">normal</option>
-                <option value="ice">ice</option>
-                <option value="ghost">ghost</option>
-                <option value="dark">dark</option>
-                <option value="steel">steel</option> */}
             </Select>
                 <SelectArrow />
             </CustomSelect>

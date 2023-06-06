@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { Header } from "../components/Header"
 import { getPokemon } from "../services/getPokemon"
 import { getPokemonAbility } from '../services/getPokemonAbility'
-// import { getPokemonEvolution } from "../services/getPokemonEvolutions"
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { PokemonDetail } from "../components/PokemonDetail"
@@ -26,8 +25,6 @@ const Details = () => {
          const pokemonAbilities = await Promise.all(pokemonDetail.abilities.map(async (ability) => {
             return await getPokemonAbility(ability.ability.name)
          }))
-         // const pokemonEvolutions = await getPokemonEvolution(pokemonDetail.id)
-         // console.log(pokemonEvolutions)
          setPokemon({
             details: pokemonDetail,
             abilities: pokemonAbilities
@@ -40,7 +37,6 @@ const Details = () => {
     return ( 
        <>
         <Header/>
-        
         <Main details>
          {/* <Link to={`/details/${pokemon.id - 1}`}></Link>
          <Link to={`/details/${pokemon.id + 1}`}></Link> */}
