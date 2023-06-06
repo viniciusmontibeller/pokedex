@@ -51,13 +51,13 @@ const pokemonTypeColor = {
     steel: "#B7B7CE",
 }
 
-const localTheme = JSON.parse(localStorage.getItem('theme')) || themes.light
+const localTheme = JSON.parse(localStorage.getItem('savedTheme')) || themes.light
 
 const Theme = ({ children }) => {
-        const [ theme, setTheme ] = useState(localTheme)
+        const [theme, setTheme] = useState(localTheme)
 
         useEffect(() => {
-            localStorage.setItem('theme', JSON.stringify(theme))
+            localStorage.setItem('savedTheme', JSON.stringify(theme))
         }, [theme])
 
         return (

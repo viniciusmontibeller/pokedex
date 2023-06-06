@@ -1,14 +1,10 @@
 import { Header} from "../components/Header"
 import { useEffect, useState } from "react";
-import { List, Button, ListContainer, Main, Filter, NotFound, Search, Select, CustomSelect, SelectArrow } from './styles'
+import { Main } from './styles'
 import { getPokemonsList } from "../services/getPokemonsList";
 import { getPokemon } from "../services/getPokemon";
-import { PokemonCard } from "../components/PokemonCards/PokemonCards";
-import { Link } from 'react-router-dom'
-import { BiSearch } from 'react-icons/bi'
-import { Loading } from "../components/Loading";
-
-const pokemonArray = ['fire', 'grass', 'electric', 'water', 'ground', 'rock', 'fairy', 'poison', 'bug', 'dragon', 'psychic', 'flying', 'fighting', 'normal', 'ice', 'ghost', 'dark', 'steel']
+import { PokemonsList } from "../components/PokemonsList";
+import { SearchField } from "../components/SearchField";
 
 const Home = () => {
 
@@ -51,43 +47,18 @@ const Home = () => {
         <>
             <Header handleReset={handleReset}/>
             <Main>
-            <Filter>
-            <Search>
-            <input value={query}
-                onChange={(event) => setQuery(event.target.value)} 
-                type='search' 
-                placeholder="Search Pokemon"/>
-                <BiSearch/>
-            </Search>
-            <CustomSelect>
-            <Select value={queryType} onChange={(event) => setQueryType(event.target.value)} >
-                <option value=''>Type</option>
-                {pokemonArray.map((type, index) => <option key={index} value={type}>{type}</option>)}
-            </Select>
-                <SelectArrow />
-            </CustomSelect>
-            </Filter>
-            <ListContainer >
-                {loading ? <Loading/> : 
-                <> 
-                    <List>
-                    {pokemonFilter(pokemons).length > 0 ?
-                    pokemonFilter(pokemons).map((pokemon, index) => {
-                        return (
-                            <Link key={index} to={`/details/${pokemon.name}`}>
-                                <PokemonCard
-                                    id={pokemon.id}
-                                    image={pokemon.sprites.other["official-artwork"].front_default}
-                                    types={pokemon.types}
-                                    name={pokemon.name} />
-                            </Link>
-                        )
-                    }) : <NotFound>Pokemon not found</NotFound>
-                }
-                </List> 
-                <Button onClick={handleClick}>Load More</Button>
-                </>}
-            </ListContainer>
+            <SearchField 
+                query={query}
+                setQuery={setQuery}
+                queryType={queryType}
+                setQueryType={setQueryType}
+                />
+            <PokemonsList 
+                loading={loading}
+                pokemons={pokemons}
+                pokemonFilter={pokemonFilter}
+                handleClick={handleClick}
+                />
             </Main>
         </>
     )

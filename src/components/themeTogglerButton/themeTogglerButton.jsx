@@ -12,7 +12,7 @@ const ThemeTogglerButton = () => {
     return (
         <div>
             <Button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
-                {theme === themes.light ? <BsMoon/> : <BsSun/> }   
+                {theme === themes.light ? <BsMoon/> : <BsSun/>}   
             </Button>
         </div>
     )
