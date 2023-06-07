@@ -11,8 +11,6 @@
 
 ## Desafio de React Avançado do curso [DevQuest](https://devemdobro.com/matriculas-abertas/)
 
-The Pokédex it's a aplication based on the world wide franchise Pokemon, where we have a list of known pokemons and their characteristics.
-
 A Pokédex é uma aplicação baseada na franquia mundial Pokemon, onde mostramos uma lista de pokemons conhecidos e suas características. 
 
 ## Tabela de Conteúdos
@@ -51,23 +49,25 @@ Essa Pokédex foi desenvolvida em React.js e consiste em uma Single Page Aplicat
 
 - A página interna de detalhes possui um botão de retorno para a página inicial.
 
+- A página interna de detalhes possui botôes de próximo e anterior para navegar entre os pokemons.
+
 - A aplicação possui um alternador de temas entre claro e escuro com permanência localizada.
-
-## Deploy
-
-Link para a página do projeto: [Deploy através da vercel](https://pokedex-4pytvwf4h-viniciusmontibeller.vercel.app/)
 
 ## Screenshots
 
 - Versão desktop
 
-<img src="./public/screenshots/screenshot.desktop.gif">
+<img src="./public/screenshots/desktop.gif">
 
 - Versão mobile
 
 <p align="center">
-<img src="./public/screenshots/screenshot.mobile.gif" width="50%">
+<img src="./public/screenshots/mobile.gif" width="50%">
 </p>
+
+## Deploy
+
+Link para a página do projeto: [Deploy através da vercel](https://pokedex-4pytvwf4h-viniciusmontibeller.vercel.app/)
 
 ## Tecnologias
 
@@ -98,7 +98,7 @@ Para conseguir fazer os filtros passarem um pelo outro, foi feito uma função p
 
 ### Página interna
 
-Para a página interna, após o clique, foi criado uma rota usando o React-router-dom para o detalhe do pokemon selecionado, e então feito uma nova requisição para a URL baseada no nome do pokemon.
+Para a página interna, após o clique, foi criado uma rota usando o React-router-dom para o detalhe do pokemon selecionado, e então feito uma nova requisição para a URL baseada no id do pokemon.
 
 Para pegar as abilidades e descrição das abilidades é preciso fazer uma requisição para API de acordo com o nome da abilidade, e para cada nome de abilidade pega a descrição de acordo com a lingua desejada.
 
@@ -107,6 +107,8 @@ Para pegar as abilidades e descrição das abilidades é preciso fazer uma requi
 Enquanto realizava o projeto, me deparei com os componentes vazios na hora de ir para as paginas, devido ao fato do tempo das requisições. Para deixar essa transição mais agradavél resolvi colocar um componente de loading para fazer uma transição mais agradavel.
 
 Para que o usuário tenha uma melhor exeperiência, ao clicar na logo do pokemon, além de ir para a página inicial, os estados dos filtros foram reiniciados, dessa forma temos a lista original sem filtro.
+
+Para facilitar a navegação entre pokemons dentro da página de detalhes, foi adicionado botões de proximo e de anterior usando como base o id do pokemon vindo da api.
 
 ## Pré-requisitos e como rodar a aplicação
 

@@ -48,6 +48,8 @@ This Pokédex was developed in React.js and consists of a Single Page Applicatio
 
 - The inner detail page has a return to home page button.
 
+- The internal details page has next and previous buttons to navigate between pokemons.
+
 - The application has a theme switcher between light and dark with local storage.
 
 ### Deploy
@@ -95,7 +97,7 @@ In order to make the filters pass through each other, a function was created pas
 
 ### Inner page
 
-For the inner page, a route was created using React-router-dom for the selected pokemon's detail, and after the click, a new request was made for the URL based on the pokemon's name.
+For the inner page, a route was created using React-router-dom for the selected pokemon's detail, and after the click, a new request was made for the URL based on the pokemon's id.
 
 To get the abilities and the description of the abilities it was necessary to make a new request to the API according to the name of the ability, and for each name of the ability it takes the description according to the desired language.
 
@@ -104,6 +106,8 @@ To get the abilities and the description of the abilities it was necessary to ma
 While carrying out the project, I came across empty components when navigating through pages, due to the time of the requests. To make this transition more pleasant I decided to put a loading component to make more smooth transition.
 
 For a better user experience, when clicking on the pokemon logo, in addition to going to the home page, the states of the filters were reset to the original, so we have the original list without filters.
+
+To facilitate the navigation between pokemons within the details page, next and previous buttons were added using the pokemon's id from the api.
 
 ### Requirements and install
 

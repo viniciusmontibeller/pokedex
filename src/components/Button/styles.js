@@ -11,6 +11,21 @@ const Btn = styled.button`
     transition: ${props => props.theme.defaultValues.transition};
     box-shadow: ${props => props.theme.defaultValues.glassShadow};
 
+    ${props => props.themeTogglerButton && css `
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        box-shadow: ${props => props.theme.defaultValues.shadow};
+        outline: none;
+
+        :hover,
+        :focus{
+        filter: drop-shadow(0px 0px 10px white);
+        box-shadow: ${props => props.theme.defaultValues.hoverShadow};
+        }
+    `}
+
     ${props => props.default && css `
         font-size: 20px;
         padding: 0.8em 0.8em;
@@ -29,14 +44,16 @@ const Btn = styled.button`
     `}
 
     ${props => props.arrow && css `
-        
-        padding: 10px 15px;
-        border-radius: 20px;
+        border-radius: 10px;
         display: flex;
         
         
         a{
+            border-radius: inherit;
+            padding: 15px;
             line-height: 0;
+            height: 100%;
+            width: 100%;
         }
 
         :hover{
@@ -45,7 +62,7 @@ const Btn = styled.button`
         }
 
         img {
-            height: 50px;
+            height: 40px;
 
             @media(max-width: 500px){
                 height: 30px;
