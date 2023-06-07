@@ -1,26 +1,6 @@
-import styled from 'styled-components'
-import { css } from 'styled-components'
+import styled from "styled-components"
 
-const Main = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 93vh;
-    gap: 50px;
-    padding: 50px 15px;
-    ${props => props.details && css`
-        justify-content: center;
-        padding-block: 30px;
-    `}
-
-    @media(max-width: 500px){
-        gap: 30px;
-        padding-inline: 0;
-        padding-block: 30px;
-    }
-`
-
-const Button = styled.button`
+const Btn = styled.button`
     padding: 15px 30px;
     border: none;
     cursor: pointer;
@@ -42,4 +22,4 @@ const Button = styled.button`
     }
 `
 
-export { Button, Main }
+export { Btn }

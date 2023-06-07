@@ -1,6 +1,6 @@
 import { Loading } from "../Loading";
 import { PokemonCard } from "../PokemonCards/PokemonCards";
-import { Button } from "../../pages/styles";
+import { Button } from "../Button";
 import { ListContainer, List, NotFound } from "./styles"
 import { Link } from "react-router-dom";
 

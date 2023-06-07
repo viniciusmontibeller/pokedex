@@ -1,6 +1,6 @@
 import { Header} from "../components/Header"
 import { useEffect, useState } from "react";
-import { Main } from './styles'
+import { Main } from '../components/Main'
 import { getPokemonsList } from "../services/getPokemonsList";
 import { getPokemon } from "../services/getPokemon";
 import { PokemonsList } from "../components/PokemonsList";

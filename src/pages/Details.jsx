@@ -5,8 +5,8 @@ import { getPokemonAbility } from '../services/getPokemonAbility'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { PokemonDetail } from "../components/PokemonDetail"
-import { Button } from '../pages/styles'
-import { Main } from './styles'
+import { Button } from '../components/Button'
+import { Main } from '../components/Main'
 import { Loading } from "../components/Loading"
 // import seta from '../assets/seta.png'
 
@@ -48,7 +48,9 @@ const Details = () => {
                abilities={pokemon.abilities}
                moves={pokemon.details.moves}
             />
-            <Link to='/'><Button >Back</Button></Link>
+            <Link to='/'>
+               <Button>Back</Button>
+            </Link>
             </>
          }
         </Main>

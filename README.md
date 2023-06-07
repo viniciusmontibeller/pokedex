@@ -1,4 +1,4 @@
-# Pokédex &nbsp;&nbsp;&nbsp; <img src='./public/pokeball_fav.png'>
+# Pokédex &nbsp; <img src='./public/pokeball_fav.png'>
 
 
 <p align="center">

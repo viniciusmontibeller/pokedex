@@ -9,13 +9,10 @@ const ThemeTogglerButton = () => {
 
     const { theme, setTheme } = useContext(ThemeContext)
 
-    return (
-        <div>
-            <Button onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
+    return  <Button 
+            onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
                 {theme === themes.light ? <BsMoon/> : <BsSun/>}   
             </Button>
-        </div>
-    )
 }
 
 const Button = styled.button`
@@ -29,7 +26,7 @@ const Button = styled.button`
     box-shadow: ${props => props.theme.defaultValues.shadow};
     backdrop-filter: ${props => props.theme.defaultValues.backgroundFilter};
     outline: none;
-    transition: 0.2s ease-in-out;
+    transition: ${props => props.theme.defaultValues.transition};
     :hover,
     :focus{
         filter: drop-shadow(0px 0px 10px white);
