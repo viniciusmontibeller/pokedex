@@ -51,19 +51,19 @@ const Details = () => {
                   moves={pokemon.details.moves}
                />
             <ButtonsField>
-               <Button prev arrow disabled={id == 1}>
                   <Link to={`/details/${pokemon.details.id - 1}`}>
+               <Button prev arrow disabled={id == 1}>
                      <img src={seta} alt="previous"/>
-                  </Link>
                </Button> 
+                  </Link>
                <Link to='/'>
                   <Button default>Back to pokédex</Button>
                </Link>
-               <Button next arrow disabled={id == 1118}>
                   <Link to={`/details/${pokemon.details.id + 1}`}>
+               <Button next arrow disabled={id == 1118}>
                      <img src={seta} alt="next"/>
-                  </Link>
                </Button>
+                  </Link>
             </ButtonsField>
             </Caroussel>
             </>

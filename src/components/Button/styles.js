@@ -46,15 +46,7 @@ const Btn = styled.button`
     ${props => props.arrow && css `
         border-radius: 10px;
         display: flex;
-        
-        
-        a{
-            border-radius: inherit;
-            padding: 15px;
-            line-height: 0;
-            height: 100%;
-            width: 100%;
-        }
+        padding: 15px;
 
         :hover{
             background-color: rgba(255, 255, 255, 0.4);
