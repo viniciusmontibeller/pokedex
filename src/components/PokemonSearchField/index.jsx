@@ -7,12 +7,12 @@ const pokemonTypeList = ['fire', 'grass', 'electric', 'water', 'ground', 'rock',
 const PokemonSearchField = ({ searchValue, type, setSearchValue, setType }) => {
     return (
         <Filters>
-            <SearchFilter 
+            <SearchFilter
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
                 placeholder="Search Pokemon"
-                />
-            <TypeFilter  
+            />
+            <TypeFilter
                 type={type}
                 setType={setType}>
                 <option value=''>Type</option>

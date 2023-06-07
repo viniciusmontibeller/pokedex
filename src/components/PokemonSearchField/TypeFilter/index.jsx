@@ -1,13 +1,14 @@
+import React from "react"
 import { CustomSelect, Select, SelectArrow } from "./styles"
 
-const TypeFilter = (props) => {
+const TypeFilter = ({children, type, setType, ...rest}) => {
     return (
         <CustomSelect>
             <Select
-                {...props} 
-                value={props.type} 
-                onChange={(event) => props.setType(event.target.value)} >
-                {props.children}
+                {...rest}
+                value={type}
+                onChange={(event) => setType(event.target.value)} >
+                {children}
             </Select>
             <SelectArrow />
         </CustomSelect>

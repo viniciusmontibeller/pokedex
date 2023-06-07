@@ -1,4 +1,4 @@
-import { Header} from "../components/Header"
+import { Header } from "../components/Header"
 import { useEffect, useState } from "react";
 import { Main } from '../components/Containers'
 import { getPokemonsList } from "../services/getPokemonsList";
@@ -29,9 +29,9 @@ const Home = () => {
     const pokemonFilter = (pokemons) => {
         return pokemons.filter(pokemon => {
             return pokemon.name.toLowerCase().includes(searchValue.toLowerCase())
-            }).filter(pokemon => {
+        }).filter(pokemon => {
             return pokemon.types[0].type.name.includes(type) || pokemon.types[1]?.type.name.includes(type)
-            })
+        })
     }
 
     const handleClick = () => {
@@ -45,21 +45,21 @@ const Home = () => {
 
     return (
         <>
-            <Header handleReset={handleReset}/>
-                <Main>
-                    <PokemonSearchField 
-                        searchValue={searchValue}
-                        setSearchValue={setSearchValue}
-                        type={type}
-                        setType={setType}
-                        />
-                    <PokemonsList 
-                        loading={loading}
-                        pokemons={pokemons}
-                        pokemonFilter={pokemonFilter}
-                        handleClick={handleClick}
-                        />
-                </Main>
+            <Header handleReset={handleReset} />
+            <Main>
+                <PokemonSearchField
+                    searchValue={searchValue}
+                    setSearchValue={setSearchValue}
+                    type={type}
+                    setType={setType}
+                />
+                <PokemonsList
+                    loading={loading}
+                    pokemons={pokemons}
+                    pokemonFilter={pokemonFilter}
+                    handleClick={handleClick}
+                />
+            </Main>
         </>
     )
 }

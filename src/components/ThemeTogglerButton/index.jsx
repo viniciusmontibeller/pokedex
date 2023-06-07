@@ -9,11 +9,11 @@ const ThemeTogglerButton = () => {
 
     const { theme, setTheme } = useContext(ThemeContext)
 
-    return  <Button 
-            themeTogglerButton
-            onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
-                {theme === themes.light ? <BsMoon/> : <BsSun/>}   
-            </Button>
+    return <Button
+        themeTogglerButton
+        onClick={() => setTheme(theme === themes.light ? themes.dark : themes.light)}>
+        {theme === themes.light ? <BsMoon /> : <BsSun />}
+    </Button>
 }
 
 export { ThemeTogglerButton }

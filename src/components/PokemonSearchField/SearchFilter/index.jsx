@@ -1,16 +1,17 @@
+import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { Search } from './styles'
 
-const SearchFilter = (props) => {
+const SearchFilter = ({ searchValue, setSearchValue, ...rest}) => {
     return (
         <Search>
-            <input 
-                {...props}
-                value={props.searchValue}
-                onChange={(event) => props.setSearchValue(event.target.value)} 
-                type='search' 
-                />
-            <BiSearch/>
+            <input
+                {...rest}
+                value={searchValue}
+                onChange={(event) => setSearchValue(event.target.value)}
+                type='search'
+            />
+            <BiSearch />
         </Search>
     )
 }

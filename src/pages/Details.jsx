@@ -35,42 +35,42 @@ const Details = () => {
       fetchData()
    }, [id])
 
-    return ( 
-       <>
-        <Header/>
+   return (
+      <>
+         <Header />
          <Main details>
-            {loading ? <Loading/> : 
-            <>
-            <Caroussel>
-               <PokemonDetail 
-                  name={pokemon.details.name}
-                  id={pokemon.details.id}
-                  image={pokemon.details.sprites?.other["official-artwork"].front_default}
-                  types={pokemon.details.types}
-                  abilities={pokemon.abilities}
-                  moves={pokemon.details.moves}
-               />
-            <ButtonsField>
-                  <Link to={`/details/${pokemon.details.id - 1}`}>
-               <Button prev arrow disabled={id == 1}>
-                     <img src={seta} alt="previous"/>
-               </Button> 
-                  </Link>
-               <Link to='/'>
-                  <Button default>Back to pokédex</Button>
-               </Link>
-                  <Link to={`/details/${pokemon.details.id + 1}`}>
-               <Button next arrow disabled={id == 1118}>
-                     <img src={seta} alt="next"/>
-               </Button>
-                  </Link>
-            </ButtonsField>
-            </Caroussel>
-            </>
+            {loading ? <Loading /> :
+               <>
+                  <Caroussel>
+                     <PokemonDetail
+                        name={pokemon.details.name}
+                        id={pokemon.details.id}
+                        image={pokemon.details.sprites?.other["official-artwork"].front_default}
+                        types={pokemon.details.types}
+                        abilities={pokemon.abilities}
+                        moves={pokemon.details.moves}
+                     />
+                     <ButtonsField>
+                        <Link to={`/details/${pokemon.details.id - 1}`}>
+                           <Button prev arrow disabled={id == 1}>
+                              <img src={seta} alt="previous" />
+                           </Button>
+                        </Link>
+                        <Link to='/'>
+                           <Button default>Back to pokédex</Button>
+                        </Link>
+                        <Link to={`/details/${pokemon.details.id + 1}`}>
+                           <Button next arrow disabled={id == 1118}>
+                              <img src={seta} alt="next" />
+                           </Button>
+                        </Link>
+                     </ButtonsField>
+                  </Caroussel>
+               </>
             }
-        </Main>
-       </>
-    )
-   }
+         </Main>
+      </>
+   )
+}
 
 export { Details }
