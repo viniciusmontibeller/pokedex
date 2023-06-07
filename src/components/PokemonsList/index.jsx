@@ -14,7 +14,7 @@ const PokemonsList = ({ loading, pokemons, pokemonFilter, handleClick }) => {
                     {pokemonFilter(pokemons).length > 0 ?
                     pokemonFilter(pokemons).map((pokemon, index) => {
                         return (
-                            <Link key={index} to={`/details/${pokemon.name}`}>
+                            <Link key={index} to={`/details/${pokemon.id}`}>
                                 <PokemonCard
                                     id={pokemon.id}
                                     image={pokemon.sprites.other["official-artwork"].front_default}
@@ -25,7 +25,7 @@ const PokemonsList = ({ loading, pokemons, pokemonFilter, handleClick }) => {
                     }) : <NotFound>Pokemon not found</NotFound>
                 }
                 </List> 
-                <Button onClick={handleClick}>Load More</Button>
+                <Button default onClick={handleClick}>Load More</Button>
                 </>}
             </ListContainer>
     )

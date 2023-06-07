@@ -6,8 +6,8 @@ const SearchFilter = (props) => {
         <Search>
             <input 
                 {...props}
-                value={props.query}
-                onChange={(event) => props.setQuery(event.target.value)} 
+                value={props.searchValue}
+                onChange={(event) => props.setSearchValue(event.target.value)} 
                 type='search' 
                 />
             <BiSearch/>

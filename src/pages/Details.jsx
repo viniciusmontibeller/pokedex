@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
 import { Header } from "../components/Header"
-import { getPokemon } from "../services/getPokemon"
+import { getPokemonById } from "../services/getPokemonById.JS"
 import { getPokemonAbility } from '../services/getPokemonAbility'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { PokemonDetail } from "../components/PokemonDetail"
 import { Button } from '../components/Button'
-import { Main } from '../components/Main'
+import { Main, Caroussel } from '../components/Containers'
 import { Loading } from "../components/Loading"
-// import seta from '../assets/seta.png'
+import seta from '../assets/seta.png'
+import { ButtonsField } from "../components/Containers"
 
 const Details = () => {
    const [pokemon, setPokemon] = useState({
@@ -17,11 +18,11 @@ const Details = () => {
    })
    const [loading, setLoading] = useState(true)
 
-   const { name } = useParams()
+   const { id } = useParams()
 
    useEffect(() => {
       const fetchData = async () => {
-         const pokemonDetail = await getPokemon(name)
+         const pokemonDetail = await getPokemonById(id)
          const pokemonAbilities = await Promise.all(pokemonDetail.abilities.map(async (ability) => {
             return await getPokemonAbility(ability.ability.name)
          }))
@@ -32,16 +33,15 @@ const Details = () => {
          setLoading(false)
       }
       fetchData()
-   }, [])
+   }, [id])
 
     return ( 
        <>
         <Header/>
          <Main details>
-            {/* <Link to={`/details/${pokemon.id - 1}`}></Link>
-            <Link to={`/details/${pokemon.id + 1}`}></Link> */}
             {loading ? <Loading/> : 
             <>
+            <Caroussel>
                <PokemonDetail 
                   name={pokemon.details.name}
                   id={pokemon.details.id}
@@ -50,11 +50,24 @@ const Details = () => {
                   abilities={pokemon.abilities}
                   moves={pokemon.details.moves}
                />
+            <ButtonsField>
+               <Button prev arrow disabled={id == 1}>
+                  <Link to={`/details/${pokemon.details.id - 1}`}>
+                     <img src={seta} alt="previous"/>
+                  </Link>
+               </Button> 
                <Link to='/'>
-                  <Button>Back</Button>
+                  <Button default>Back to pokédex</Button>
                </Link>
+               <Button next arrow disabled={id == 1118}>
+                  <Link to={`/details/${pokemon.details.id + 1}`}>
+                     <img src={seta} alt="next"/>
+                  </Link>
+               </Button>
+            </ButtonsField>
+            </Caroussel>
             </>
-         }
+            }
         </Main>
        </>
     )

@@ -5,8 +5,8 @@ const TypeFilter = (props) => {
         <CustomSelect>
             <Select
                 {...props} 
-                value={props.queryType} 
-                onChange={(event) => props.setQueryType(event.target.value)} >
+                value={props.type} 
+                onChange={(event) => props.setType(event.target.value)} >
                 {props.children}
             </Select>
             <SelectArrow />

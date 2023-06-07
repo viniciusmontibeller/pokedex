@@ -1,17 +1,17 @@
 import { Header} from "../components/Header"
 import { useEffect, useState } from "react";
-import { Main } from '../components/Main'
+import { Main } from '../components/Containers'
 import { getPokemonsList } from "../services/getPokemonsList";
 import { getPokemon } from "../services/getPokemon";
 import { PokemonsList } from "../components/PokemonsList";
-import { SearchField } from "../components/SearchField";
+import { PokemonSearchField } from "../components/PokemonSearchField";
 
 const Home = () => {
 
     const [pokemons, setPokemons] = useState([])
     const [loading, setLoading] = useState(true)
-    const [query, setQuery] = useState('')
-    const [queryType, setQueryType] = useState('')
+    const [searchValue, setSearchValue] = useState('')
+    const [type, setType] = useState('')
     const [listQuantity, setListQuantity] = useState(10)
 
     useEffect(() => {
@@ -28,9 +28,9 @@ const Home = () => {
 
     const pokemonFilter = (pokemons) => {
         return pokemons.filter(pokemon => {
-            return pokemon.name.toLowerCase().includes(query.toLowerCase())
+            return pokemon.name.toLowerCase().includes(searchValue.toLowerCase())
             }).filter(pokemon => {
-            return pokemon.types[0].type.name.includes(queryType) || pokemon.types[1]?.type.name.includes(queryType)
+            return pokemon.types[0].type.name.includes(type) || pokemon.types[1]?.type.name.includes(type)
             })
     }
 
@@ -39,19 +39,19 @@ const Home = () => {
     }
 
     const handleReset = () => {
-        setQuery('')
-        setQueryType('')
+        setSearchValue('')
+        setType('')
     }
 
     return (
         <>
             <Header handleReset={handleReset}/>
                 <Main>
-                    <SearchField 
-                        query={query}
-                        setQuery={setQuery}
-                        queryType={queryType}
-                        setQueryType={setQueryType}
+                    <PokemonSearchField 
+                        searchValue={searchValue}
+                        setSearchValue={setSearchValue}
+                        type={type}
+                        setType={setType}
                         />
                     <PokemonsList 
                         loading={loading}

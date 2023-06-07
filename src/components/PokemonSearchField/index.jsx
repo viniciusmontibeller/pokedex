@@ -1,25 +1,25 @@
 import { SearchFilter } from "./SearchFilter"
 import { TypeFilter } from "./TypeFilter"
-import { Filter } from './styles'
+import { Filters } from './styles'
 
 const pokemonTypeList = ['fire', 'grass', 'electric', 'water', 'ground', 'rock', 'fairy', 'poison', 'bug', 'dragon', 'psychic', 'flying', 'fighting', 'normal', 'ice', 'ghost', 'dark', 'steel']
 
-const SearchField = ({ query, queryType, setQuery, setQueryType }) => {
+const PokemonSearchField = ({ searchValue, type, setSearchValue, setType }) => {
     return (
-        <Filter>
+        <Filters>
             <SearchFilter 
-                query={query}
-                setQuery={setQuery}
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
                 placeholder="Search Pokemon"
                 />
             <TypeFilter  
-                queryType={queryType}
-                setQueryType={setQueryType}>
+                type={type}
+                setType={setType}>
                 <option value=''>Type</option>
                 {pokemonTypeList.map((type, index) => <option key={index} value={type}>{type}</option>)}
             </TypeFilter>
-        </Filter>
+        </Filters>
     )
 }
 
-export { SearchField }
+export { PokemonSearchField }

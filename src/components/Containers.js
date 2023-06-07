@@ -20,4 +20,21 @@ const Main = styled.main`
     }
 `
 
-export { Main }
+const Caroussel = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1100px;
+`
+
+const ButtonsField = styled.div`
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 10px;
+`
+
+export { Main, Caroussel, ButtonsField }

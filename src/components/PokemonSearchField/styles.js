@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const Filter = styled.div`
+const Filters = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -12,4 +12,4 @@ const Filter = styled.div`
     }
 `
 
-export { Filter }
+export { Filters }

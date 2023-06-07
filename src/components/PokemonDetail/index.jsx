@@ -1,6 +1,7 @@
 import { DetailContainer, Moves, Ability, Info, Description, MovesContainer, Name, AbilitiesContainer } from './style'
 import { Types, Type } from '../Types'
 
+
 const PokemonDetail = ({ name, id, image, types, abilities, moves }) => {
 
     return (

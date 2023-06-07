@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+`
+
 const DetailContainer = styled.div`
     background-color: ${props => props.theme.defaultValues.transparentBackground};
     box-shadow: ${props => props.theme.defaultValues.darkGlassShadow};
@@ -156,4 +163,4 @@ const MovesContainer = styled.div`
     }
 `
 
-export { DetailContainer, Moves, Ability, Info, Description, MovesContainer, Name, AbilitiesContainer }
+export { Container, DetailContainer, Moves, Ability, Info, Description, MovesContainer, Name, AbilitiesContainer }
