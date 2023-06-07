@@ -1,15 +1,15 @@
 import { CustomSelect, Select, SelectArrow } from "./styles"
 
-const pokemonTypeList = ['fire', 'grass', 'electric', 'water', 'ground', 'rock', 'fairy', 'poison', 'bug', 'dragon', 'psychic', 'flying', 'fighting', 'normal', 'ice', 'ghost', 'dark', 'steel']
-
-const TypeFilter = ({ queryType, setQueryType }) => {
+const TypeFilter = (props) => {
     return (
         <CustomSelect>
-            <Select value={queryType} onChange={(event) => setQueryType(event.target.value)} >
-                <option value=''>Type</option>
-                {pokemonTypeList.map((type, index) => <option key={index} value={type}>{type}</option>)}
+            <Select
+                {...props} 
+                value={props.queryType} 
+                onChange={(event) => props.setQueryType(event.target.value)} >
+                {props.children}
             </Select>
-                <SelectArrow />
+            <SelectArrow />
         </CustomSelect>
     )
 }

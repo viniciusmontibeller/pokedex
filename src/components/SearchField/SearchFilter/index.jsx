@@ -1,14 +1,16 @@
 import { BiSearch } from 'react-icons/bi'
 import { Search } from './styles'
 
-const SearchFilter = ({ query, setQuery }) => {
+const SearchFilter = (props) => {
     return (
         <Search>
-            <input value={query}
-                onChange={(event) => setQuery(event.target.value)} 
+            <input 
+                {...props}
+                value={props.query}
+                onChange={(event) => props.setQuery(event.target.value)} 
                 type='search' 
-                placeholder="Search Pokemon"/>
-                <BiSearch/>
+                />
+            <BiSearch/>
         </Search>
     )
 }

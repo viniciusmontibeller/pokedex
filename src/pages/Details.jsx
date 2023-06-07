@@ -37,20 +37,22 @@ const Details = () => {
     return ( 
        <>
         <Header/>
-        <Main details>
-         {/* <Link to={`/details/${pokemon.id - 1}`}></Link>
-         <Link to={`/details/${pokemon.id + 1}`}></Link> */}
-         {loading ? <Loading/> : <><PokemonDetail 
-               name={pokemon.details.name}
-               id={pokemon.details.id}
-               image={pokemon.details.sprites?.other["official-artwork"].front_default}
-               types={pokemon.details.types}
-               abilities={pokemon.abilities}
-               moves={pokemon.details.moves}
-            />
-            <Link to='/'>
-               <Button>Back</Button>
-            </Link>
+         <Main details>
+            {/* <Link to={`/details/${pokemon.id - 1}`}></Link>
+            <Link to={`/details/${pokemon.id + 1}`}></Link> */}
+            {loading ? <Loading/> : 
+            <>
+               <PokemonDetail 
+                  name={pokemon.details.name}
+                  id={pokemon.details.id}
+                  image={pokemon.details.sprites?.other["official-artwork"].front_default}
+                  types={pokemon.details.types}
+                  abilities={pokemon.abilities}
+                  moves={pokemon.details.moves}
+               />
+               <Link to='/'>
+                  <Button>Back</Button>
+               </Link>
             </>
          }
         </Main>

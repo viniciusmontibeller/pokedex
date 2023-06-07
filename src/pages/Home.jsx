@@ -46,20 +46,20 @@ const Home = () => {
     return (
         <>
             <Header handleReset={handleReset}/>
-            <Main>
-            <SearchField 
-                query={query}
-                setQuery={setQuery}
-                queryType={queryType}
-                setQueryType={setQueryType}
-                />
-            <PokemonsList 
-                loading={loading}
-                pokemons={pokemons}
-                pokemonFilter={pokemonFilter}
-                handleClick={handleClick}
-                />
-            </Main>
+                <Main>
+                    <SearchField 
+                        query={query}
+                        setQuery={setQuery}
+                        queryType={queryType}
+                        setQueryType={setQueryType}
+                        />
+                    <PokemonsList 
+                        loading={loading}
+                        pokemons={pokemons}
+                        pokemonFilter={pokemonFilter}
+                        handleClick={handleClick}
+                        />
+                </Main>
         </>
     )
 }
