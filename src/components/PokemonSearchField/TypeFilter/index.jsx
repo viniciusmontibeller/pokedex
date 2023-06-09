@@ -1,7 +1,7 @@
 import React from "react"
 import { CustomSelect, Select, SelectArrow } from "./styles"
 
-const TypeFilter = ({children, type, setType, ...rest}) => {
+const TypeFilter = ({ children, type, setType, ...rest }) => {
     return (
         <CustomSelect>
             <Select

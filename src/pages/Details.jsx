@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Header } from "../components/Header"
-import { getPokemonById } from "../services/getPokemonById.JS"
+import { getPokemonById } from "../services/getPokemonById.js"
 import { getPokemonAbility } from '../services/getPokemonAbility'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
@@ -52,7 +52,7 @@ const Details = () => {
                      />
                      <ButtonsField>
                         <Link to={`/details/${pokemon.details.id - 1}`}>
-                           <Button prev arrow disabled={id == 1}>
+                           <Button prev arrow title="previous" disabled={id == 1} >
                               <img src={seta} alt="previous" />
                            </Button>
                         </Link>
@@ -60,7 +60,7 @@ const Details = () => {
                            <Button default>Back to pokédex</Button>
                         </Link>
                         <Link to={`/details/${pokemon.details.id + 1}`}>
-                           <Button next arrow disabled={id == 1118}>
+                           <Button next arrow title="next" disabled={id == 1118} >
                               <img src={seta} alt="next" />
                            </Button>
                         </Link>
