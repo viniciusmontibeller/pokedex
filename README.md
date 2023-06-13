@@ -7,7 +7,10 @@
 <a href="https://styled-components.com/" target="_blank"><img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" target="_blank"></a>
 <a href="https://vitejs.dev/" target="_blank"><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/></a>
 <a href="https://vercel.com/" target="_blank"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<a href="https://jestjs.io/" target="_blank"><img src="https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white"/></a>
+<a href="https://testing-library.com/" target="_blank"><img src="https://img.shields.io/badge/testing%20library-323330?style=for-the-badge&logo=testing-library&logoColor=red"/></a>
 </p>
+
 
 ## Desafio de React Avançado do curso [DevQuest](https://devemdobro.com/matriculas-abertas/)
 
@@ -85,6 +88,9 @@ Biblioteca escolhida por trabalhar com o conceito de SPA deixando a navegacão e
 
 - [React-icons](https://react-icons.github.io/react-icons/)
 Usado para adicionar icones na aplicação de forma simplificada.
+
+- [Jest](https://jestjs.io/) e [Testing Library](https://testing-library.com/)
+Jest foi foi escolhido por ser um dos frameworks de testes mais utilizados e rapido, e em conjunto com o Testing Library conseguimos simplificar os testes em React.
 
 ## Processo 
 

@@ -6,6 +6,8 @@
 <a href="https://styled-components.com/" target="_blank"><img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" target="_blank"></a>
 <a href="https://vitejs.dev/" target="_blank"><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/></a>
 <a href="https://vercel.com/" target="_blank"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<a href="https://jestjs.io/" target="_blank"><img src="https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white"/></a>
+<a href="https://testing-library.com/" target="_blank"><img src="https://img.shields.io/badge/testing%20library-323330?style=for-the-badge&logo=testing-library&logoColor=red"/></a>
 </p>
 
 ## Advanced React Quest by [DevQuest](https://devemdobro.com/matriculas-abertas/) course
@@ -84,6 +86,9 @@ Library chosen for working with the concept of SPA making the navigation between
 
 - [React-icons](https://react-icons.github.io/react-icons/)
 Simplified way of adding icons on the aplication.
+
+- [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/)
+Jest was chosen because it is one of the most used and fast testing frameworks, and together with the Testing Library we were able to simplify React testing.
 
 ### My process
 
