@@ -5,7 +5,6 @@ import { ListContainer, List, NotFound } from "./styles"
 import { Link } from "react-router-dom";
 
 const PokemonsList = ({ loading, pokemons, pokemonFilter, handleClick }) => {
-
     return (
         <ListContainer >
             {loading ? <Loading /> :

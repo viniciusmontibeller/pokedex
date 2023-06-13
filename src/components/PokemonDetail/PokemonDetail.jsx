@@ -3,7 +3,8 @@ import { Types, Type } from '../Types'
 
 
 const PokemonDetail = ({ name, id, image, types, abilities, moves }) => {
-
+   console.log(abilities)
+   console.log(moves)
    return (
       <DetailContainer>
          <Info colorType={types?.[0].type.name}>

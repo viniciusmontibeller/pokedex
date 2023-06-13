@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Main } from '../components/Containers'
 import { getPokemonsList } from "../services/getPokemonsList";
 import { getPokemon } from "../services/getPokemon";
-import { PokemonsList } from "../components/PokemonsList";
+import { PokemonsList } from "../components/PokemonsList/PokemonList";
 import { PokemonSearchField } from "../components/PokemonSearchField";
 
 const Home = () => {

@@ -4,7 +4,7 @@ import { getPokemonById } from "../services/getPokemonById.js"
 import { getPokemonAbility } from '../services/getPokemonAbility'
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
-import { PokemonDetail } from "../components/PokemonDetail"
+import { PokemonDetail } from "../components/PokemonDetail/PokemonDetail"
 import { Button } from '../components/Button'
 import { Main, Caroussel } from '../components/Containers'
 import { Loading } from "../components/Loading"

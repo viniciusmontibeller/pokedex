@@ -1,5 +1,5 @@
 import { Head, Container } from "./style"
-import { ThemeTogglerButton } from "../ThemeTogglerButton/"
+import { ThemeTogglerButton } from "../ThemeTogglerButton/ThemeTogglerButton"
 import { Link } from 'react-router-dom'
 import logo from '../../assets/pokemon_logo.png'
 

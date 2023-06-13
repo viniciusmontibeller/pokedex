@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Card = styled.li`
-    background-color: ${props => props.theme.defaultValues.transparentBackground};
+    background-color: ${props => { props.theme.defaultValues.transparentBackground}};
     position: relative;
     box-shadow: ${props => props.theme.defaultValues.darkGlassShadow};
     backdrop-filter: ${props => props.theme.defaultValues.backgroundFilter};
